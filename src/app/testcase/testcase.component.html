@@ -1,21 +1,21 @@
 <div class="flex flex-col">
-    <div>
+    <div *ngIf="model.input">
         <h3 class="mb-2">Input</h3>
-        <div class="code">{{model?.input}}</div>
+        <div class="code h-size overflow-y-scroll" [innerText]="model?.input"></div>
     </div>
     <div *ngIf="model.output">
         <h3 class="mb-2">Expected Output</h3>
-        <div class="code">{{model?.output}}</div>
+        <div class="code h-size overflow-y-scroll" [innerText]="model?.output"></div>
     </div>
     <div *ngIf="model?.real_output">
         <h3 class="mb-2">Your Output</h3>
-        <div class="code">{{model?.real_output}}</div>
+        <div class="code h-size overflow-y-scroll" [innerText]="model?.real_output"></div>
     </div>
     <div *ngIf="model?.error">
         <h3 class="mb-2">Error</h3>
         <div class="code">
             {{model?.error?.class[0]}}.{{model?.error?.class[1]}}:
-            <span innerHTML={{model?.error?.text}}></span>
+            <div class="h-size overflow-y-scroll" [innerText]="model?.error?.text"></div>
         </div>
     </div>
 </div>

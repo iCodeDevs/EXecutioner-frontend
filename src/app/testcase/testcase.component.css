@@ -1,0 +1,6 @@
+div.code {
+    @apply bg-gray-100 text-black rounded-lg shadow-inner p-2 break-words;
+  }
+.h-size {
+    height: 33vh;
+}
