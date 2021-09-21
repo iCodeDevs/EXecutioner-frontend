@@ -1,0 +1,19 @@
+<div>
+    <div class="m-2 px-2">
+        <label for="language">Language: </label>
+        <select class="rounded-md mx-2 h-10 text-sm" name="language" (change)="onLanguageChange($event)">
+            <option *ngFor="let item of languageChoices" [selected]="item[1]==model.language" [value]="item[1]">
+                {{item[0]}}</option>
+        </select>
+    </div>
+    <ngs-code-editor [theme]="theme" [codeModel]="model" [options]="options">
+    </ngs-code-editor>
+    <div class="flex justify-end mt-2">
+        <button
+            class="bg-red-500 text-white rounded-lg p-2 border-red-600 border-1 hover:bg-red-600"
+            (click)="onSubmit()"
+            >
+            {{SubmitText}}
+        </button>
+    </div>
+</div>

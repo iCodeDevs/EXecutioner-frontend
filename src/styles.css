@@ -2,3 +2,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.ngx-codemirror {
+    border: 1px solid #ccc;
+  }
