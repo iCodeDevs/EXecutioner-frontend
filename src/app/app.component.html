@@ -1,7 +1,9 @@
 <div class="flex h-screen w-screen">
     <div class="m-auto h-1/2 w-1/2">
-        <app-editor SubmitText="Execute"></app-editor>
+        <app-editor SubmitText="Execute" (Submitted)="onSubmit($event)"></app-editor>
+        <app-testcase
+            [model] = "testcase"
+        ></app-testcase>
     </div>
-
 </div>
 <router-outlet></router-outlet>

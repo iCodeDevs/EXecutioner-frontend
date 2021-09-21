@@ -6,3 +6,7 @@
 .ngx-codemirror {
     border: 1px solid #ccc;
   }
+
+div.code {
+  @apply bg-gray-200 text-black rounded-lg shadow-inner p-2;
+}

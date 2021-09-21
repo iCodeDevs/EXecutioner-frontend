@@ -13,7 +13,7 @@ export class EditorComponent implements OnInit {
   }
   @Input() SubmitText = "Submit"
 
-  @Output() ValueChanged = new EventEmitter<string>()
+  @Output() Submitted = new EventEmitter<[string,string]>()
 
   theme = 'vs-dark';
 
@@ -21,11 +21,11 @@ export class EditorComponent implements OnInit {
     ["python3","python"],
     ["C","c"],
   ]
-
+  realLanguage: string = 'C'
   model: CodeModel = {
     language: 'c',
     uri: 'main.json',
-    value: '#include<stdio.h>',
+    value: '',
   };
 
   options = {
@@ -40,9 +40,10 @@ export class EditorComponent implements OnInit {
       ...this.model,
       language: ev.target.value,
     }
+    this.realLanguage = ev.target.selectedOptions[0].innerText.trim();
   }
 
   onSubmit(){
-    this.ValueChanged.emit(this.model.value);
+    this.Submitted.emit([this.model.value,this.realLanguage]);
   }
 }

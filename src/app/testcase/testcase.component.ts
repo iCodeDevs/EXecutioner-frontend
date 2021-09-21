@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit,Input } from '@angular/core';
 @Component({
   selector: 'app-testcase',
   templateUrl: './testcase.component.html',
@@ -7,9 +6,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestcaseComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    console.log("testcase:"); 
+    console.log(this.model)
+  }
 
   ngOnInit(): void {
   }
 
+  @Input() model: any
 }
