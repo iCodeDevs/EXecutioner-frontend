@@ -21,7 +21,7 @@ jobs:
           WS_ENDPOINT: ${{ secrets.WS_ENDPOINT }}
         run: |
           npm install
-          ng build --output-path dist --base-href /frontend/
+          npm ng build --output-path dist --base-href /frontend/
           mv dist/frontend/index.html dist/frontend/index.htm
           cat dist/frontend/index.htm > dist/frontend/404.html
 
