@@ -1,5 +1,5 @@
 <div class="flex h-screen w-screen">
-    <div class="m-auto h-1/2 w-1/2">
+    <div class="md:m-auto h-1/2 w-full md:w-1/2 mx-2">
         <app-editor SubmitText="Execute" (Submitted)="onSubmit($event)"></app-editor>
         <app-testcase
             [model] = "testcase"
