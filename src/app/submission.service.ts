@@ -14,11 +14,12 @@ export class SubmissionService {
   
     if (!this.socket$ || this.socket$.closed) {
       this.socket$ = this.getNewWebSocket();
-      this.socket$.subscribe(
-        msg => console.log(msg),
-        err => console.log(err),
-        () => console.log('closed websocket')
-      )
+      if(!environment.production)
+        this.socket$.subscribe(
+          msg => console.log(msg),
+          err => console.log(err),
+          () => console.log('closed websocket')
+        );
     }
   }
   

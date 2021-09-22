@@ -24,7 +24,6 @@ export class AppComponent {
   }
   listenTo(value: any) : void{
     if(value.command == "response"){
-      console.log(this);
       this.testcase = value.result;
     }
   }

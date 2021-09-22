@@ -7,8 +7,6 @@ import { Component, OnInit,Input } from '@angular/core';
 export class TestcaseComponent implements OnInit {
 
   constructor() {
-    console.log("testcase:"); 
-    console.log(this.model)
   }
 
   ngOnInit(): void {
