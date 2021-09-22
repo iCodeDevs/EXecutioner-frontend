@@ -20,13 +20,13 @@ jobs:
         env:
           WS_ENDPOINT: ${{ secrets.WS_ENDPOINT }}
         run: |
-          npm install
-          npm run ng build --output-path dist --base-href /frontend/
-          mv dist/frontend/index.html dist/frontend/index.htm
-          cat dist/frontend/index.htm > dist/frontend/404.html
+          npm ci
+          npm run build
+          mv dist/Executioner-frontend/index.html dist/Executioner-frontend/index.htm
+          cat dist/Executioner-frontend/index.htm > dist/Executioner-frontend/404.html
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.3
         with:
           branch: gh-pages # The branch the action should deploy to.
-          folder: dist/frontend # The folder the action should deploy.
+          folder: dist/Executioner-frontend # The folder the action should deploy.
