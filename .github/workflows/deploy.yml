@@ -10,10 +10,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2.3.1
 
-      - name: Node $
+      - name: Node
         uses: actions/setup-node@v1
-        with:
-          node-version: $
 
       - name: npm install and npm run build
         env:
