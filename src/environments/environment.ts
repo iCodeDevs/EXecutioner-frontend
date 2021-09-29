@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  wsEndpoint: "ws://localhost:8000/ws"
+  wsEndpoint: "ws://20.204.31.2/ws",
 };
 
 /*
