@@ -11,6 +11,7 @@ export class AppComponent {
     output: "",
     real_output:"",
   }
+  input: string = ""
   constructor(private submitter: SubmissionService){
     this.submitter.connect();
     this.submitter.listen((value)=>{this.listenTo(value)});
@@ -20,6 +21,7 @@ export class AppComponent {
       command: "execute",
       program: program.replace(/\r\n/g, "\n"),
       language,
+      input: this.input,
     })
   }
   listenTo(value: any) : void{
